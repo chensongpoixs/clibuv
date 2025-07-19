@@ -1850,7 +1850,7 @@ parts:
     if (*parts) {
       p = memmem(parts, sizeof(parts) - 1, p, n + 1);
       if (p == NULL)
-        p = "unknown";
+        p = (char*)"unknown";  /* mutable cast (will be copied, safe to use literal) */
       else
         p += n + 1;
       n = (int) strcspn(p, "\n");
