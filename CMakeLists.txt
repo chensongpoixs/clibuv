@@ -822,3 +822,29 @@ message(STATUS "summary of build options:
       C compiler:    ${CMAKE_C_COMPILER} (${CMAKE_C_COMPILER_ID})
       CFLAGS:        ${CMAKE_C_FLAGS_${_build_type}} ${CMAKE_C_FLAGS}
 ")
+
+
+
+
+# foreach(fileItem ${AllFile})       
+#     # Get the directory of the source file
+#     get_filename_component(PARENT_DIR "${fileItem}" DIRECTORY)
+	
+#     # Remove common directory prefix to make the group
+#     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "" GROUP "${PARENT_DIR}")
+#     # Make sure we are using windows slashes
+#     string(REPLACE "/" "\\" GROUP "${GROUP}")
+# 	#message(status   "---> fileItem = ${fileItem}     GROUP ---->  ${GROUP}")
+#     # Group into "Source Files" and "Header Files"
+#     set(GROUP "${GROUP}")
+#     source_group("${GROUP}" FILES "${fileItem}")
+# endforeach()
+
+
+
+
+set_property(TARGET uv  PROPERTY FOLDER ${thridParty_IDE_FOLDER}/${PROJECT_NAME})
+
+
+
+set_property(TARGET uv_a  PROPERTY FOLDER ${thridParty_IDE_FOLDER}/${PROJECT_NAME})
